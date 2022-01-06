@@ -47,12 +47,12 @@ public class Emprunt {
 	
 	@Override
 	public String toString() {
-		String stringLivres = "";
+		StringBuilder sbLivres = new StringBuilder(); 
 		for(Livre l: livres) {
-			stringLivres += String.format("%s\n",l.toString()); 
+			sbLivres.append(String.format("%s\n",l.toString())); 
 		}
 		return String.format("EMPRUNT => id: %d, dateDebut: %s, dateFin: %s, client: %s %s \n%s",
-				id, dateDebut, dateFin, client.getPrenom(), client.getNom(), stringLivres);
+				id, dateDebut, dateFin, client.getPrenom(), client.getNom(), sbLivres);
 	}
 	
 	public Integer getId() {
