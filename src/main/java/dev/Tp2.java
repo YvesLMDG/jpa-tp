@@ -79,10 +79,17 @@ public class Tp2 {
 	}
 
 	public static Livre getLivreByTitre(String titre, EntityManager em){
+		String request = "select l from Livre l where l.titre = :title";
+		TypedQuery<Livre> query2 = em.createQuery(request,
+				Livre.class);
+		query2.setParameter("title", titre);
+		return query2.getSingleResult(); // Pour un unique résultat, exception sinon
+		/**
 		String request = "select l from Livre l where l.titre = \'" + titre + "\'";
 		TypedQuery<Livre> query2 = em.createQuery(request,
 				Livre.class);
 		return query2.getResultList().get(0);
+		**/
 	}
 	
 	public static Livre getLivreByAuteur(String auteur, EntityManager em){

@@ -18,9 +18,14 @@ public class Livre {
 
 	@Column(name = "AUTEUR")
 	private String auteur;
-	
+
+	@Override
+	public String toString() {
+		return String.format("id: %d, Titre: %s, Auteur: %s", this.id, this.titre, this.auteur);
+	}
+
 	public Livre() {
-		
+
 	}
 
 	public Integer getId() {
@@ -45,11 +50,6 @@ public class Livre {
 
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
-	}
-	
-	@Override
-	public String toString() {
-		return String.format("id: %d, Titre: %s, Auteur: %s", this.id, this.titre, this.auteur);
 	}
 
 }
