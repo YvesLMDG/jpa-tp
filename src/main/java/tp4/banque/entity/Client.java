@@ -1,4 +1,4 @@
-package banque.entity;
+package tp4.banque.entity;
 
 import java.time.LocalDate;
 import java.util.HashSet;

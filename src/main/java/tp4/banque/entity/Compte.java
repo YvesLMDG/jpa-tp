@@ -1,4 +1,4 @@
-package banque.entity;
+package tp4.banque.entity;
 
 import java.util.HashSet;
 import java.util.Set;

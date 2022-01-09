@@ -1,4 +1,4 @@
-package banque;
+package tp4;
 
 import java.time.LocalDate;
 
@@ -8,11 +8,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
-import banque.entity.Adresse;
-import banque.entity.Banque;
-import banque.entity.Client;
-import banque.entity.Compte;
-import banque.entity.Operation;
+import tp4.banque.entity.Adresse;
+import tp4.banque.entity.Banque;
+import tp4.banque.entity.Client;
+import tp4.banque.entity.Compte;
+import tp4.banque.entity.Operation;
 
 public class Tp4 {
 

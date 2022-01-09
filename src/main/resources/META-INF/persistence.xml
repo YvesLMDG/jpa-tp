@@ -22,7 +22,10 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	<persistence-unit name="bibliotheque-pu"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>tp2.entity.Livre</class>
 		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mariadb://localhost:3306/bibliotheque_db?serverTimezone=Europe/Paris" />
 			<property name="javax.persistence.jdbc.user" value="root" />
@@ -38,7 +41,12 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	<persistence-unit name="tp3-pu"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>tp3.entity.Client</class>
+		<class>tp3.entity.Emprunt</class>
+		<class>tp3.entity.Livre</class>
 		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mariadb://localhost:3306/tp3?serverTimezone=Europe/Paris" />
 			<property name="javax.persistence.jdbc.user" value="root" />
@@ -54,10 +62,10 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	<persistence-unit name="tp4-pu"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		<class>banque.entity.Banque</class>
-		<class>banque.entity.Client</class>
-		<class>banque.entity.Compte</class>
-		<class>banque.entity.Operation</class>
+		<class>tp4.banque.entity.Banque</class>
+		<class>tp4.banque.entity.Client</class>
+		<class>tp4.banque.entity.Compte</class>
+		<class>tp4.banque.entity.Operation</class>
 		<properties>
 			<!-- desactiver l'autodetection des classes de type @Entity -->
 			<property name="hibernate.archive.autodetection" value="" />
@@ -68,6 +76,37 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 				value="drop-and-create" />
 			<property name="javax.persistence.jdbc.url"
 				value="jdbc:mariadb://localhost:3306/banque?serverT	imezone=Europe/Paris" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<!-- property name="javax.persistence.jdbc.password" value="" / -->
+			<property name="javax.persistence.jdbc.driver"
+				value="org.mariadb.jdbc.Driver" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.MySQL8Dialect" />
+		</properties>
+	</persistence-unit>
+
+	<persistence-unit name="tp5-pu"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>tp5.banque.entity.Adresse</class>
+		<class>tp5.banque.entity.AssuranceVie</class>
+		<class>tp5.banque.entity.Banque</class>
+		<class>tp5.banque.entity.Client</class>
+		<class>tp5.banque.entity.Compte</class>
+		<class>tp5.banque.entity.LivretA</class>
+		<class>tp5.banque.entity.Operation</class>
+		<class>tp5.banque.entity.Virement</class>
+		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
+			<!-- Activation de la génération des tables manquantes uniquement -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property
+				name="javax.persistence.schema-generation.database.action"
+				value="drop-and-create" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:mariadb://localhost:3306/tp5?serverT	imezone=Europe/Paris" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<!-- property name="javax.persistence.jdbc.password" value="" / -->
 			<property name="javax.persistence.jdbc.driver"

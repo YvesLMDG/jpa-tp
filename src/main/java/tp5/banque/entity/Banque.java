@@ -1,33 +1,32 @@
-package dev.entity;
+package tp5.banque.entity;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CLIENT")
-public class Client {
-
+@Table(name="BANQUE")
+public class Banque {
+	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="ID")
 	private Integer id;
-
 	@Column(name="NOM")
 	private String nom;
-
-	@Column(name="PRENOM")
-	private String prenom;
-
-	@OneToMany(mappedBy="client")
-	private Set<Emprunt> emprunts;
-
-	public Client() {
-		emprunts = new  HashSet<Emprunt>();
+	
+	@OneToMany(mappedBy="banque")
+	private Set<Client> clients;
+	
+	public Banque() {
+		clients= new HashSet<Client>();
 	}
 
 	public Integer getId() {
@@ -38,12 +37,8 @@ public class Client {
 		return nom;
 	}
 
-	public String getPrenom() {
-		return prenom;
-	}
-
-	public Set<Emprunt> getEmprunts() {
-		return emprunts;
+	public Set<Client> getClients() {
+		return clients;
 	}
 
 	public void setId(Integer id) {
@@ -54,12 +49,9 @@ public class Client {
 		this.nom = nom;
 	}
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
 	}
-
-	public void setEmprunts(Set<Emprunt> emprunts) {
-		this.emprunts = emprunts;
-	}
-
+	
+	
 }

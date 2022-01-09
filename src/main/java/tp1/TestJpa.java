@@ -1,4 +1,4 @@
-package dev;
+package tp1;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

@@ -1,13 +1,13 @@
-package dev;
+package tp3;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 
-import dev.entity.Client;
-import dev.entity.Emprunt;
-import dev.entity.Livre;
+import tp3.entity.Client;
+import tp3.entity.Emprunt;
+import tp3.entity.Livre;
 
 public class Tp3 {
 

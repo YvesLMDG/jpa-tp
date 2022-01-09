@@ -1,4 +1,4 @@
-package dev;
+package tp2;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import dev.entity.Livre;
+import tp2.entity.Livre;
 
 public class Tp2 {
 

@@ -1,4 +1,4 @@
-package dev.entity;
+package tp3.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
